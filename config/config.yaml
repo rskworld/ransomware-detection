@@ -1,0 +1,60 @@
+# Configuration File for Ransomware Detection System
+# Author: Molla Samser
+# Designer & Tester: Rima Khatun
+# Organization: RSK World
+# Website: https://rskworld.in
+# Email: help@rskworld.in, support@rskworld.in
+
+# Model Configuration
+model:
+  name: "ransomware_detection_lstm"
+  input_shape: [100, 50]  # [sequence_length, features]
+  lstm_units: [128, 64]
+  dropout_rate: 0.3
+  dense_units: [64, 32]
+  output_units: 1
+  activation: "sigmoid"
+  optimizer: "adam"
+  loss: "binary_crossentropy"
+  metrics: ["accuracy", "precision", "recall"]
+
+# Training Configuration
+training:
+  batch_size: 32
+  epochs: 50
+  validation_split: 0.2
+  test_split: 0.1
+  early_stopping:
+    monitor: "val_loss"
+    patience: 5
+    restore_best_weights: true
+  checkpoint:
+    save_best_only: true
+    monitor: "val_loss"
+
+# Data Configuration
+data:
+  raw_data_path: "./data/raw"
+  processed_data_path: "./data/processed"
+  model_save_path: "./data/models"
+  sequence_length: 100
+  feature_count: 50
+  normalization: true
+
+# Monitoring Configuration
+monitoring:
+  check_interval: 1.0  # seconds
+  alert_threshold: 0.7  # confidence threshold for alerts
+  log_path: "./logs"
+  enable_real_time: true
+  watch_directories:
+    - "./data/test"
+
+# Feature Extraction
+features:
+  file_operations: true
+  encryption_patterns: true
+  system_calls: true
+  file_access_frequency: true
+  entropy_analysis: true
+

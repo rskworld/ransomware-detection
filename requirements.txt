@@ -1,0 +1,22 @@
+# Ransomware Detection Project Requirements
+# Author: Molla Samser
+# Designer & Tester: Rima Khatun
+# Organization: RSK World
+# Website: https://rskworld.in
+# Email: help@rskworld.in, support@rskworld.in
+
+tensorflow>=2.13.0
+keras>=2.13.1
+numpy>=1.24.3
+pandas>=2.0.3
+scikit-learn>=1.3.0
+matplotlib>=3.7.2
+seaborn>=0.12.2
+jupyter>=1.0.0
+notebook>=7.0.0
+pyyaml>=6.0
+tqdm>=4.66.1
+psutil>=5.9.5
+watchdog>=3.0.0
+scipy>=1.10.0
+
